@@ -11,68 +11,86 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css"
+        integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
-<header>
-    <h1>Your Personal Library</h1>
-    <p>Have you ever wanted a place that you can store information about all your books, except that it doesn't permanently store your data and requires you to keep the browser window open 24/7? If yes, than this is for you!</p>
-</header>
-<main>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Tags</th>
-            <th>Read/Unread</th>
-            <th>Remove</th>
-        </tr>
-        <tr>
-            <td class="title">The Brief and Wondrous Life of Oscar Wao</td>
-            <td class="author">Junot Diaz</td>
-            <td class="tags"></td>
-            <td class="status"><button class="unread" id="toggleStatus">Filler</button></td>
-            <td class="remove"><button type="button">Remove from Collection</button></td>
-        </tr>
-        <tr>
-            <td class="title">To Kill a Mockingbird</td>
-            <td class="author">Harper Lee</td>
-            <td class="tags"><p>Classic</p><p>Historical</p></td>
-            <td class="status"><button class="read" id="toggleStatus">Filler</button></td>
-            <td class="remove"><button type="button">Remove from Collection</button></td>
-        </tr>
-        <tr>
-            <td class="title">Dune</td>
-            <td class="author">Frank Herbert</td>
-            <td class="tags"><p>SciFi</p></td>
-            <td class="status"><button class="unread" id="toggleStatus">Filler</button></td>
-            <td class="remove"><button type="button">Remove from Collection</button></td>
-        </tr>
-        <tr>
-            <td class="title">Breathless</td>
-            <td class="author">Amy McCulloch</td>
-            <td class="tags"><p>Mystery</p></td>
-            <td class="status"><button class="unread" id="toggleStatus">Filler</button></td>
-            <td class="remove"><button type="button">Remove from Collection</button></td>
-        </tr>
-        <tr>
-            <td class="title">Kaikeyi</td>
-            <td class="author">Vaishnavi Patel</td>
-            <td class="tags"><p>Fantasy</p></td>
-            <td class="status"><button class="unread" id="toggleStatus">Filler</button></td>
-            <td class="remove"><button type="button">Remove from Collection</button></td>
-        </tr>
-        <tr>
-            <td class="title">The Book of Cold Cases</td>
-            <td class="author">Simone St. James</td>
-            <td class="tags"><p>Mystery</p></td>
-            <td class="status"><button class="unread" id="toggleStatus">Filler</button></td>
-            <td class="remove"><button type="button">Remove from Collection</button></td>
-        </tr>
-    </table>
-</main>
+    <header>
+        <h1>Your Personal Library</h1>
+        <p>Have you ever wanted a place that you can store information about all your books, except that it doesn't
+            permanently store your data and requires you to keep the browser window open 24/7? If yes, than this is for
+            you!</p>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Tags</th>
+                <th>Read?</th>
+                <th>
+                    <!-- Remove -->
+                </th>
+            </tr>
+            <tr>
+                <td class="title">The Brief and Wondrous Life of Oscar Wao</td>
+                <td class="author">Junot Diaz</td>
+                <td class="tags"></td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+            </tr>
+            <tr>
+                <td class="title">To Kill a Mockingbird</td>
+                <td class="author">Harper Lee</td>
+                <td class="tags">
+                    <p>Classic</p>
+                    <p>Historical</p>
+                </td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+            </tr>
+            <tr>
+                <td class="title">Dune</td>
+                <td class="author">Frank Herbert</td>
+                <td class="tags">
+                    <p>SciFi</p>
+                </td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+            </tr>
+            <tr>
+                <td class="title">Breathless</td>
+                <td class="author">Amy McCulloch</td>
+                <td class="tags">
+                    <p>Mystery</p>
+                </td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+            </tr>
+            <tr>
+                <td class="title">Kaikeyi</td>
+                <td class="author">Vaishnavi Patel</td>
+                <td class="tags">
+                    <p>Fantasy</p>
+                </td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+            </tr>
+            <tr>
+                <td class="title">The Book of Cold Cases</td>
+                <td class="author">Simone St. James</td>
+                <td class="tags">
+                    <p>Mystery</p>
+                </td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+            </tr>
+        </table>
+    </main>
 </body>
 
 </html>
