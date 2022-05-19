@@ -86,6 +86,13 @@ body {
   background-color: rgb(var(--clr-dark1));
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 header {
   background-color: rgb(var(--clr-dark2));
   text-align: center;
@@ -94,7 +101,6 @@ header {
 }
 
 table {
-  margin: auto;
   width: 80vw;
   text-align: left;
   border-collapse: collapse;
@@ -122,3 +128,77 @@ th {
 i {
   pointer-events: none;
 }
+
+#createNewBook, #addNewBook {
+  cursor: pointer;
+  background-color: rgb(var(--clr-accent));
+  color: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+.modal-container {
+  background-color: rgba(34, 40, 49, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  visibility: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(5px);
+}
+
+.form-container {
+  height: 50vh;
+  width: 50vw;
+  background-color: rgb(var(--clr-dark2));
+  padding: 2rem;
+  border: 2px solid #ffffffb4;
+  border-radius: 10px;
+}
+
+.form-container p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-item input[type="text"] {
+  width: 100%;
+  background-color: #ffffffb4;
+  border: 2px solid rgb(var(--clr-dark1));
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.input-item input[type="text"]:focus {
+  background-color: #FFFFFF;
+}
+
+.button {
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+
+
+
