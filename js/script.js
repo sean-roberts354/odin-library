@@ -46,6 +46,10 @@ function addNewBook(title, author, tags, isRead) {
       tr.appendChild(createBasicTdNode(books[newBook].author, "author"));
       tr.appendChild(createTagsTdNode(books[newBook].tags));
       tr.appendChild(createStatusTdNode(books[newBook].isRead));
+      tr.appendChild(createRemoveButtonTdNode());
+
+      let table = document.querySelector("table");
+      table.appendChild(tr);
 
 }
 
@@ -79,6 +83,8 @@ function createStatusTdNode(isRead) {
       input.setAttribute("name", "status");
       input.setAttribute("id", "status");
 
+      console.log(isRead, typeof isRead);
+
       if (isRead) {
             input.setAttribute("checked", "checked");
       }
@@ -89,6 +95,27 @@ function createStatusTdNode(isRead) {
       })
 
       td.appendChild(input);
+
+      return td;
+}
+
+function createRemoveButtonTdNode() {
+      let icon = document.createElement("i");
+      icon.classList.add("fa-solid", "fa-ban");
+
+      let button = document.createElement("button");
+      button.setAttribute("type", "button");
+      button.setAttribute("id", "deleteBook")
+      button.addEventListener('click', (e) => {
+            // Finish
+            console.log("clicked");
+      })
+      button.appendChild(icon);
+
+
+      let td = document.createElement("td");
+      td.classList.add("remove");      
+      td.appendChild(button);
 
       return td;
 }
@@ -110,7 +137,9 @@ document.querySelector("#addNewBook").addEventListener('click', () => {
       let title = document.querySelector("#title").value;
       let author = document.querySelector("#author").value;
       let tags = convertTags(document.querySelector("#tags").value);
-      let isRead = ((document.querySelector("input[name='status']:checked").value) === 'true');
+      let isRead = (document.querySelector("input[name='formStatus']:checked").value) === 'true';
+
+      console.log("Original:" + isRead)
 
       addNewBook(title, author, tags, isRead);
       toggleVisibilityModal();
