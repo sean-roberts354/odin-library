@@ -1,9 +1,5 @@
 let books = {};
 
-books['THE_BRIEF_AND_WONDROUS_LIFE_OF_OSCAR_WAO'] = new Book('The Brief and Wondrous Life of Oscar Wao', 'Junot Diaz', [], false);
-books['DUNE'] = new Book('Dune', 'Frank Herbert', ['SciFi'], true);
-
-
 function Book(title, author, tags, isRead) {
       this.title = title,
       this.author = author,
