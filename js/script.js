@@ -55,7 +55,7 @@ function addNewBook(title, author, tags, isRead) {
       tr.appendChild(createBasicTdNode(books[newBook].title, "title"));
       tr.appendChild(createBasicTdNode(books[newBook].author, "author"));
       tr.appendChild(createTagsTdNode(books[newBook].tags));
-      tr.appendChild(createStatusTdNode(books[newBook].isRead));
+      tr.appendChild(createStatusTdNode(books[newBook].isRead, newBook));
       tr.appendChild(createRemoveButtonTdNode());
 
       let table = document.querySelector("table");
@@ -84,7 +84,7 @@ function createTagsTdNode(tags) {
       return td;
 }
 
-function createStatusTdNode(isRead) {
+function createStatusTdNode(isRead, objName) {
       let td = document.createElement("td");
       td.classList.add("status");
 
@@ -92,14 +92,14 @@ function createStatusTdNode(isRead) {
       input.setAttribute("type", "checkbox");
       input.setAttribute("name", "status");
       input.setAttribute("id", "status");
+      input.dataset.book = objName;
 
       if (isRead) {
             input.setAttribute("checked", "checked");
       }
 
       input.addEventListener('change', (e) => {
-            // Finish
-            console.log("changed");
+            toggleReadStatus(e.target.dataset.book);
       })
 
       td.appendChild(input);
