@@ -23,6 +23,7 @@ function clearForm() {
       document.querySelector("#title").value = "";
       document.querySelector("#author").value = "";
       document.querySelector("#tags").value = "";
+      document.querySelector("#unread").checked = true;
 }
 
 // Takes book title and create string which follows const naming convention which will later be used as object name of book to be stored in books array/object
@@ -45,6 +46,11 @@ function convertTags(input) {
       return output;
 }
 
+function removeBook(book, element) {
+      document.querySelector("table").removeChild(element);
+      delete books[book];
+}
+
 function addNewBook(title, author, tags, isRead) {
 
       let newBook = generateObjName(title);
@@ -56,7 +62,7 @@ function addNewBook(title, author, tags, isRead) {
       tr.appendChild(createBasicTdNode(books[newBook].author, "author"));
       tr.appendChild(createTagsTdNode(books[newBook].tags));
       tr.appendChild(createStatusTdNode(books[newBook].isRead, newBook));
-      tr.appendChild(createRemoveButtonTdNode());
+      tr.appendChild(createRemoveButtonTdNode(newBook));
 
       let table = document.querySelector("table");
       table.appendChild(tr);
@@ -107,16 +113,16 @@ function createStatusTdNode(isRead, objName) {
       return td;
 }
 
-function createRemoveButtonTdNode() {
+function createRemoveButtonTdNode(objName) {
       let icon = document.createElement("i");
       icon.classList.add("fa-solid", "fa-ban");
 
       let button = document.createElement("button");
       button.setAttribute("type", "button");
       button.setAttribute("id", "deleteBook")
+      button.dataset.book = objName;
       button.addEventListener('click', (e) => {
-            // Finish
-            console.log("clicked");
+            removeBook(e.target.dataset.book, e.target.parentNode.parentNode);
       })
       button.appendChild(icon);
 
@@ -128,18 +134,7 @@ function createRemoveButtonTdNode() {
       return td;
 }
 
-
-
-let deleteBookButtons = document.querySelectorAll("#deleteBook");
-
-deleteBookButtons.forEach((button) => {
-      button.addEventListener('click', (e) => {
-            console.log(e.target.parentNode.parentNode.cells[0].textContent);
-      })
-})
-
 document.querySelector("#createNewBook").addEventListener('click', toggleVisibilityModal);
-
 
 document.querySelector("#addNewBook").addEventListener('click', () => {
       let title = document.querySelector("#title").value;
