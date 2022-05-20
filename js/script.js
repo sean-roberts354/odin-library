@@ -29,8 +29,12 @@ function generateObjName(input) {
 
 // Converts tag input on form from string to array of words by first replacing any commas and trailing spaces with whitespace which is then used as the separator for string.split()
 function convertTags(input) {
-      let output = input.replace(/(,\s*)|(,)/g, " ")
-      output = output.split(" ");
+      let output = input.split(",");
+
+      output.forEach((item, i) => {
+            output[i] = item.trim();
+      })
+      
 
       return output;
 }
@@ -82,8 +86,6 @@ function createStatusTdNode(isRead) {
       input.setAttribute("type", "checkbox");
       input.setAttribute("name", "status");
       input.setAttribute("id", "status");
-
-      console.log(isRead, typeof isRead);
 
       if (isRead) {
             input.setAttribute("checked", "checked");
@@ -138,8 +140,6 @@ document.querySelector("#addNewBook").addEventListener('click', () => {
       let author = document.querySelector("#author").value;
       let tags = convertTags(document.querySelector("#tags").value);
       let isRead = (document.querySelector("input[name='formStatus']:checked").value) === 'true';
-
-      console.log("Original:" + isRead)
 
       addNewBook(title, author, tags, isRead);
       toggleVisibilityModal();
