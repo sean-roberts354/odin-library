@@ -228,6 +228,18 @@ form {
   transition: color 150ms ease-in-out;
 }
 
+.title {
+  width: 45%;
+}
 
+.author {
+  width: 20%;
+}
 
+.status {
+  width: 7%;
+}
 
+.remove {
+  width: 5%;
+}

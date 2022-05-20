@@ -147,22 +147,3 @@ document.querySelector("#cancelAddBook").addEventListener('click', () => {
       clearForm();
       toggleVisibilityModal();
 })
-
-
-
-
-/* 
-      1. When pressing new book button, display form to enter book info
-      2. After form is completed and submitted, create new book object and store info of book
-      3. Hide new book form
-      4. Create new <tr> node with a data-index attribute and populate each cell with info from book object
-            -Title
-            -Author
-            -Tags
-                  -Tags will be initially a string of comma-separated words that will need to be broken up into individual items and stored into an array
-                  -Tags are represented as nested <p> elements on table
-            -Status
-                  -Form takes input as radio button but table will have it as check box. Will be stored as boolean isRead in object
-            -Remove
-                  -Remove button will have event listener which sends data-index attribute value of <tr> to function that will remove the node from the table, delete the book from the books array, and update the data-index attribute of all nodes
-*/

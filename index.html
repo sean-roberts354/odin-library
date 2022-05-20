@@ -28,14 +28,23 @@
     <main>
         <table>
             <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Tags</th>
-                <th>Read?</th>
-                <th>
+                <th class="title">Title</th>
+                <th class="author">Author</th>
+                <th class="tags">Tags</th>
+                <th class="status">Read?</th>
+                <th class="remove">
                     <!-- Remove -->
                 </th>
             </tr>
+            <!-- Template for new items
+            <tr>
+                <td class="title">The Brief and Wondrous Life of Oscar Wao</td>
+                <td class="author">Junot Diaz</td>
+                <td class="tags"></td>
+                <td class="status"><input type="checkbox" name="status" id="status"></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
+            </tr> 
+            -->
         </table>
         <button type="button" id="createNewBook">Add Book</button>
         <section class="modal-container hidden">
