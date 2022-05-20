@@ -19,6 +19,12 @@ function toggleVisibilityModal() {
       document.querySelector(".modal-container").classList.toggle("hidden");
 }
 
+function clearForm() {
+      document.querySelector("#title").value = "";
+      document.querySelector("#author").value = "";
+      document.querySelector("#tags").value = "";
+}
+
 // Takes book title and create string which follows const naming convention which will later be used as object name of book to be stored in books array/object
 function generateObjName(input) {
       let output = input.toUpperCase();
@@ -142,6 +148,12 @@ document.querySelector("#addNewBook").addEventListener('click', () => {
       let isRead = (document.querySelector("input[name='formStatus']:checked").value) === 'true';
 
       addNewBook(title, author, tags, isRead);
+      clearForm();
+      toggleVisibilityModal();
+})
+
+document.querySelector("#cancelAddBook").addEventListener('click', () => {
+      clearForm();
       toggleVisibilityModal();
 })
 

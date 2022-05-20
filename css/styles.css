@@ -162,6 +162,7 @@ i {
   padding: 2rem;
   border: 2px solid #ffffffb4;
   border-radius: 10px;
+  position: absolute;
 }
 
 .form-container p {
@@ -200,6 +201,31 @@ form {
 
 .hidden {
   visibility: hidden;
+}
+
+#cancelAddBook {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  width: 1.8rem;
+  height: 1.8rem;
+
+}
+
+#cancelAddBook i {
+  transition: color 150ms ease-in-out;
+  font-size: 1.8rem;
+  color: #ffffffb4;
+
+}
+
+#cancelAddBook:hover i {
+  color:rgb(160, 0, 0);
+  transition: color 150ms ease-in-out;
 }
 
 
