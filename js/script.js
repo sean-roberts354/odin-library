@@ -11,6 +11,10 @@ function Book(title, author, tags, isRead) {
       this.isRead = isRead
 }
 
+function toggleReadStatus(book) {
+      books[book].isRead = books[book].isRead !== true;
+}
+
 function toggleVisibilityModal() {
       document.querySelector(".modal-container").classList.toggle("hidden");
 }
@@ -40,6 +44,8 @@ function addNewBook(title, author, tags, isRead) {
 
       tr.appendChild(createBasicTdNode(books[newBook].title, "title"));
       tr.appendChild(createBasicTdNode(books[newBook].author, "author"));
+      tr.appendChild(createTagsTdNode(books[newBook].tags));
+      tr.appendChild(createStatusTdNode(books[newBook].isRead));
 
 }
 
@@ -51,7 +57,41 @@ function createBasicTdNode(text, className) {
       return td;
 }
 
+function createTagsTdNode(tags) {
+      let td = document.createElement("td");
+      td.classList.add("tags");
 
+      tags.forEach((tagName) => {
+            let p = document.createElement("p");
+            p.textContent = tagName;
+            td.appendChild(p);
+      })
+
+      return td;
+}
+
+function createStatusTdNode(isRead) {
+      let td = document.createElement("td");
+      td.classList.add("status");
+
+      let input = document.createElement("input");
+      input.setAttribute("type", "checkbox");
+      input.setAttribute("name", "status");
+      input.setAttribute("id", "status");
+
+      if (isRead) {
+            input.setAttribute("checked", "checked");
+      }
+
+      input.addEventListener('change', (e) => {
+            // Finish
+            console.log("changed");
+      })
+
+      td.appendChild(input);
+
+      return td;
+}
 
 
 
