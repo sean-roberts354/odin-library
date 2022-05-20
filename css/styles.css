@@ -147,7 +147,6 @@ i {
   height: 100vh;
   width: 100vw;
 
-  visibility: hidden;
 
   display: flex;
   align-items: center;
@@ -157,7 +156,7 @@ i {
 }
 
 .form-container {
-  height: 50vh;
+  height: auto;
   width: 50vw;
   background-color: rgb(var(--clr-dark2));
   padding: 2rem;
@@ -197,6 +196,10 @@ form {
 .button {
   margin-inline: auto;
   margin-top: 2rem;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 

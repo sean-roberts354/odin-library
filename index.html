@@ -36,14 +36,14 @@
                     <!-- Remove -->
                 </th>
             </tr>
-            <tr>
+            <tr data-index="0">
                 <td class="title">The Brief and Wondrous Life of Oscar Wao</td>
                 <td class="author">Junot Diaz</td>
                 <td class="tags"></td>
                 <td class="status"><input type="checkbox" name="status" id="status"></td>
-                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
             </tr>
-            <tr>
+            <tr data-index="1">
                 <td class="title">To Kill a Mockingbird</td>
                 <td class="author">Harper Lee</td>
                 <td class="tags">
@@ -51,7 +51,7 @@
                     <p>Historical</p>
                 </td>
                 <td class="status"><input type="checkbox" name="status" id="status"></td>
-                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
             </tr>
             <tr>
                 <td class="title">Dune</td>
@@ -60,7 +60,7 @@
                     <p>SciFi</p>
                 </td>
                 <td class="status"><input type="checkbox" name="status" id="status"></td>
-                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
             </tr>
             <tr>
                 <td class="title">Breathless</td>
@@ -69,7 +69,7 @@
                     <p>Mystery</p>
                 </td>
                 <td class="status"><input type="checkbox" name="status" id="status"></td>
-                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
             </tr>
             <tr>
                 <td class="title">Kaikeyi</td>
@@ -78,7 +78,7 @@
                     <p>Fantasy</p>
                 </td>
                 <td class="status"><input type="checkbox" name="status" id="status"></td>
-                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
             </tr>
             <tr>
                 <td class="title">The Book of Cold Cases</td>
@@ -87,11 +87,11 @@
                     <p>Mystery</p>
                 </td>
                 <td class="status"><input type="checkbox" name="status" id="status"></td>
-                <td class="remove"><button type="button"><i class="fa-solid fa-ban"></i></button></td>
+                <td class="remove"><button type="button" id="deleteBook"><i class="fa-solid fa-ban"></i></button></td>
             </tr>
         </table>
         <button type="button" id="createNewBook">Add Book</button>
-        <section class="modal-container">
+        <section class="modal-container hidden">
             <div class="form-container">
                 <p>New Book</p>
                 <form action="/">
@@ -110,7 +110,7 @@
                     <div class="checkboxes">
                         <input type="radio" name="status" id="read" value="true">
                         <label for="status">Read</label>
-                        <input type="radio" name="status" id="unread" value="false">
+                        <input type="radio" name="status" id="unread" value="false" checked="checked">
                         <label for="status">Unread</label>
                     </div>
                     <div class="button">
